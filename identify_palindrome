@@ -1,0 +1,21 @@
+def Validate_Palidrome(str1):
+# Create a blank list for str1
+    list1= []
+# Put each character of str1 in list1
+    for x in str1:
+        list1.extend(x)
+# Create a reverse list of list1
+    Reverso= list1[::-1]
+# Validate positions of each elements and order between both lists
+    count_dif= [i for i, j in zip(list1, Reverso) if not i == j]
+# Condition to validate whether is palindrome
+    if len(count_dif) == 0:
+        print("It is a palindrome")
+# Validate if the difference is only one word. """It can personalize the number of characters"""
+    elif len(count_dif) == 2:
+        print("Only one word is different")
+# Return a message when 
+    else:
+        print("It is not a palindrome")
+        
+print(Validate_Palidrome("anana"))
